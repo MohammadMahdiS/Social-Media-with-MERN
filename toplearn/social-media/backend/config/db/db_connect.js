@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const db_connect = () => {
     try {
         mongoose.set("strictQuery", false)
-        mongoose.connect("mongodb://127.0.0.1:27017/advance_social_media", {
+        mongoose.connect(process.env.MONGODB_URL, "mongodb://127.0.0.1:27017/advance_social_media", {
             useUnifiedToplogy: true,
             useNewUrlParser: true
         })
